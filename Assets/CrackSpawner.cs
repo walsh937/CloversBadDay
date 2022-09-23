@@ -9,8 +9,12 @@ public class CrackSpawner : MonoBehaviour
     /// </summary>
     public GameObject crack;
 
+    public GameObject crackDestroyer;
+
     public float crackSpeed;
-    private List<GameObject> cracks = new List<GameObject>();
+    public List<GameObject> cracks = new List<GameObject>();
+
+    public List<GameObject> _cracks = new List<GameObject>();
 
     // Start is called before the first frame update
     private void Start()
@@ -27,17 +31,21 @@ public class CrackSpawner : MonoBehaviour
             new_crack.transform.position += new Vector3(0, Random.Range(7, -7));
             cracks.Add(new_crack);
         }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            foreach (GameObject crack_instance in cracks)
-            {
-                print('a');
-                crack_instance.transform.position -= new Vector3(crackSpeed, 0);
-            }
-        }
         if (Input.GetKeyDown(KeyCode.H))
         {
             print(cracks[0]);
         }
+
+        _cracks = cracks;
+        foreach (GameObject crack_instance in cracks)
+        {
+            crack_instance.transform.position -= new Vector3(crackSpeed, 0);
+            if (crack_instance.transform.position.x < crackDestroyer.transform.position.x)
+            {
+                Destroy(crack_instance);
+                _cracks.Remove(crack_instance);
+            }
+        }
+        //cracks = _cracks;
     }
 }
