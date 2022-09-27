@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 407756308}
   - component: {fileID: 407756311}
   - component: {fileID: 407756310}
+  - component: {fileID: 407756312}
   m_Layer: 0
   m_Name: Heroine
   m_TagString: Untagged
@@ -241,6 +242,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &407756312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407756307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 033d8e608d5f64e4193529e23c559699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  luck: 0
+  luckText: {fileID: 764950466}
 --- !u!1 &764950466
 GameObject:
   m_ObjectHideFlags: 0
