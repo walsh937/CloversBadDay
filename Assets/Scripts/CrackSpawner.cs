@@ -42,8 +42,8 @@ public class CrackSpawner : MonoBehaviour
             crack_instance.transform.position -= new Vector3(crackSpeed, 0);
             if (crack_instance.transform.position.x < crackDestroyer.transform.position.x)
             {
-                Destroy(crack_instance);
-                _cracks.Remove(crack_instance);
+                crack_instance.transform.position = gameObject.transform.position;
+                crack_instance.transform.position += new Vector3(0, Random.Range(7, -7));
             }
         }
         //cracks = _cracks;
