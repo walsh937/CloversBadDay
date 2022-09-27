@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerData : MonoBehaviour
 {
+    public int luck = 0;
+    public
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    public void UpdateUI()
+    {
     }
 }
