@@ -17,7 +17,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 charVelocity = new Vector3(0, Input.GetAxis("Vertical") * CharacterMovementSpeed, 0);
+        Vector3 charVelocity = new Vector2(Input.GetAxis("Horizontal") * CharacterMovementSpeed, Input.GetAxis("Vertical") * CharacterMovementSpeed);
 
         controller.Move(charVelocity * Time.deltaTime);
         //Bound movement on screen

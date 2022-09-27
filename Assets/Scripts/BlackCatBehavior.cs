@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BlackCatBehavior : MonoBehaviour
 {
+    public float catSpeed = 1;
+    public float scrollSpeed = 0.5f;
+
     private float timeSinceDirectionUpdate = 0;
-    float catSpeed = 1;
     private float timeToUpdate = 2f;
-    private Vector3 eulerRotation;
 
     Vector3 directionToMove = new Vector3(0, 0, 0);
     // Start is called before the first frame update
@@ -28,9 +29,9 @@ public class BlackCatBehavior : MonoBehaviour
             timeToUpdate = Random.Range(1, 5);
         }
         //calculate the forward direction manually cause idk how to get it from unity
-        eulerRotation = transform.rotation.eulerAngles;
-        directionToMove = new Vector3(Mathf.Cos(eulerRotation.x), -Mathf.Sin(eulerRotation.x));
+        directionToMove = new Vector2(catSpeed, 0);
 
-        transform.Translate(directionToMove * Time.deltaTime * catSpeed);
+        transform.Translate(directionToMove * Time.deltaTime);
+        transform.Translate(new Vector2(-scrollSpeed * Time.deltaTime, 0), Space.World);
     }
 }
