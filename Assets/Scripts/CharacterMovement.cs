@@ -2,24 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+[RequireComponent(typeof(Rigidbody2D))]
 public class CharacterMovement : MonoBehaviour
 {
-    private CharacterController controller;
+    private Rigidbody2D controller;
     public float CharacterMovementSpeed = 0.5f;
     public float MovementBoundary = 3.0f;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        controller = GetComponent<CharacterController>();
+        controller = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        Vector3 charVelocity = new Vector2(Input.GetAxis("Horizontal") * CharacterMovementSpeed, Input.GetAxis("Vertical") * CharacterMovementSpeed);
+        Vector3 charForce = new Vector2(Input.GetAxis("Horizontal") * CharacterMovementSpeed, Input.GetAxis("Vertical") * CharacterMovementSpeed);
 
-        controller.Move(charVelocity * Time.deltaTime);
+        controller.AddForce(charForce * Time.deltaTime);
         //Bound movement on screen
         if (transform.position.y <= -MovementBoundary)
         {
