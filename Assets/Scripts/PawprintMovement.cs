@@ -16,7 +16,7 @@ public class PawprintMovement : MonoBehaviour
     void Update()
     {
         transform.Translate(-scrollSpeed * Time.deltaTime, 0, 0, Space.World);
-        if (transform.position.x < -10.6f)
+        if (transform.position.x < -10.8f)
         {
             Object.Destroy(self);
         }
