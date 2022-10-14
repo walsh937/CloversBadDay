@@ -76,9 +76,11 @@ public class BlackCatBehavior : MonoBehaviour
             pawprintOffset *= -1;
             timeSincePawprint = 0;
 
-        if (transform.position.x < -11.5f) {
-            Object.Destroy(gameObject);
+            if (transform.position.x < -11.5f) {
+                Object.Destroy(gameObject);
+            }
         }
-        }
+
+        //rotation animation control
     }
 }
