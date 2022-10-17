@@ -48,6 +48,7 @@ public class CrackSpawner : MonoBehaviour
                 crack_instance.transform.position += new Vector3(0, Random.Range(7, -7));
                 crack_instance.transform.Rotate(0, 0, Random.Range(0, 360));
                 crack_instance.transform.localScale = new Vector3(Random.Range(0.5f, 2), Random.Range(0.5f, 2), Random.Range(0.5f, 2));
+                crack_instance.GetComponent<CrackTouch>().crack_has_been_touched = false;
             }
         }
         //cracks = _cracks;
