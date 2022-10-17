@@ -19,10 +19,11 @@ public class BlackCatBehavior : MonoBehaviour
 
     private Quaternion newRotation;
     private Vector3 directionToMove = new Vector3(0, 0, 0);
+    private Animation anim;
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = GetComponentInChildren<Animation>();
     }
     void ChangeDirection()
     {
@@ -82,5 +83,54 @@ public class BlackCatBehavior : MonoBehaviour
         }
 
         //rotation animation control
+        Vector3 rot = transform.rotation.eulerAngles;
+        float rot_multiplier = 45;
+        Debug.Log(rot);
+        if (rot.z < Mathf.PI/4)
+        {
+            Debug.Log("anim1");
+            anim.Play("WALK_E");
+        }
+        else if (rot.z < 2 * rot_multiplier - 22.5)
+        {
+            Debug.Log("anim2");
+            anim.Play("WALK_NE");
+        }
+        else if (rot.z < 3 * rot_multiplier - 22.5)
+        {
+            Debug.Log("anim3");
+            anim.Play("WALK_N");
+        }
+        else if (rot.z < 4 * rot_multiplier - 22.5)
+        {
+            Debug.Log("anim4");
+            anim.Play("WALK_NE");
+        }
+        else if (rot.z < 5 * rot_multiplier - 22.5)
+        {
+            Debug.Log("anim5");
+            anim.Play("WALK_E");
+        }
+        else if (rot.z < 6 * rot_multiplier - 22.5)
+        {
+            Debug.Log("anim6");
+            anim.Play("WALK_SE");
+        }
+        else if (rot.z < 7 * rot_multiplier - 22.5)
+        {
+            Debug.Log("anim7");
+            anim.Play("WALK_S");
+        }
+        else if (rot.z < 8 * rot_multiplier - 22.5)
+        {
+            Debug.Log("anim8");
+            anim.Play("WALK_SE");
+        }
+        else
+        {
+            Debug.Log("anim1");
+            anim.Play("WALK_E");
+        }
+
     }
 }
