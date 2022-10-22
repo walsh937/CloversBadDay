@@ -54,7 +54,7 @@ public class CrackSpawner : MonoBehaviour
         _cracks = cracks;
         foreach (GameObject crack_instance in cracks)
         {
-            crack_instance.transform.position -= new Vector3(crackSpeed, 0);
+            crack_instance.transform.position -= new Vector3(crackSpeed, 0) * Time.deltaTime * 60;
             if (crack_instance.transform.position.x < crackDestroyer.transform.position.x)
             {
                 crack_instance.transform.position = gameObject.transform.position;

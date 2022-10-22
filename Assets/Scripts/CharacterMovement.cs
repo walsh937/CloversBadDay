@@ -23,7 +23,7 @@ public class CharacterMovement : MonoBehaviour
         while (y_velocity > -10)
         {
             controller.velocity = new Vector2(x_velocity, y_velocity);
-            y_velocity -= 0.5f;
+            y_velocity -= 0.5f * Time.deltaTime * 60;
             print(controller.velocity);
             yield return new WaitForSecondsRealtime(0.001f); //Wait 1 second
         }
