@@ -15,6 +15,10 @@ public class BlackCatSprite : MonoBehaviour
     }
     void Update()
     {
+        if (BlackCat == null)
+        {
+            Object.Destroy(this);
+        }
         transform.position = BlackCat.transform.position;
         if (BlackCat.transform.rotation.eulerAngles.z > 90 + 22.5 && BlackCat.transform.rotation.eulerAngles.z < 270 - 22.5) {
             SR.flipX = true;

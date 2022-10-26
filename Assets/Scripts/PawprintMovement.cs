@@ -9,7 +9,6 @@ public class PawprintMovement : MonoBehaviour
     public BlackCatBehavior catParent;
     public int luck_cost = 1;
 
-    public GameObject self;
     public float scrollSpeed = 0.5f;
 
     public void PawprintStart(float speed, BlackCatBehavior cat, GameObject player)
@@ -25,7 +24,7 @@ public class PawprintMovement : MonoBehaviour
         transform.Translate(-scrollSpeed * Time.deltaTime, 0, 0, Space.World);
         if (transform.position.x < -10.8f)
         {
-            Object.Destroy(self);
+            Object.Destroy(this.gameObject);
         }
     }
     // If pawprint touches shadow and path isn't already crossed, decrement luck

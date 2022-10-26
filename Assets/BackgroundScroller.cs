@@ -5,21 +5,26 @@ using UnityEngine;
 public class BackgroundScroller : MonoBehaviour
 {
     public float scrollSpeed = 2;
-    float width;
+    public GameObject background;
+    private GameObject firstBackground;
+    private Transform spawnpoint;
 
     // Start is called before the first frame update
     void Start()
     {
-        width = GetComponent<SpriteRenderer>().bounds.size.x;
+        spawnpoint = transform;
+        firstBackground = Instantiate(background, spawnpoint);
+        firstBackground.GetComponent<BGIndividualScroll>().scrollSpeed = scrollSpeed;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(new Vector2(-scrollSpeed, 0));
-        if (transform.position.x < 0)
+        if (firstBackground == null || firstBackground.transform.position.x < 0)
         {
-
+            Debug.Log(firstBackground.transform.position + " " + spawnpoint.position);
+            firstBackground = Instantiate(background, spawnpoint);
+            firstBackground.GetComponent<BGIndividualScroll>().scrollSpeed = scrollSpeed;
         }
     }
 }

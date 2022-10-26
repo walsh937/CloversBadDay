@@ -228,9 +228,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8e5c3969d8a31438ce4648368095c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  catSpeed: 3
-  scrollSpeed: 3
+  catSpeed: 2
+  scrollSpeed: 4
   pawprint: {fileID: 7509911688381186736, guid: 8cea5294130a1ca46b449d1a5f9bc644, type: 3}
   PawprintSpawner: {fileID: 1686465416958993598}
   correctionDistance: 3
+  pathCrossed: 0
   animator: {fileID: 1686465417190045290}
