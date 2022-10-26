@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class PawprintMovement : MonoBehaviour
 {
+    public GameObject player;
+    public Collider2D playerCollider;
+    public BlackCatBehavior catParent;
+    public int luck_cost = 1;
+
     public GameObject self;
     public float scrollSpeed = 0.5f;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
+    public void PawprintStart(float speed, BlackCatBehavior cat, GameObject player)
+    {
+        catParent = cat;
+        scrollSpeed = speed;
+        this.player = player;
+        playerCollider = player.GetComponent<CharacterMovement>().characterShadow.GetComponent<Collider2D>();
+    }
     // Update is called once per frame
     void Update()
     {
@@ -19,6 +26,17 @@ public class PawprintMovement : MonoBehaviour
         if (transform.position.x < -10.8f)
         {
             Object.Destroy(self);
+        }
+    }
+    // If pawprint touches shadow and path isn't already crossed, decrement luck
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log(playerCollider);
+        if (collision.gameObject.GetComponent<Collider2D>() == playerCollider && catParent.pathCrossed == false)
+        {
+            player.GetComponent<PlayerData>().luck -= luck_cost;
+            player.GetComponent<PlayerData>().UpdateUI();
+            catParent.pathCrossed = true;
         }
     }
 }

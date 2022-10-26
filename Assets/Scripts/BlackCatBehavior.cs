@@ -10,6 +10,7 @@ public class BlackCatBehavior : MonoBehaviour
     public GameObject pawprint;
     public GameObject PawprintSpawner;
     public float correctionDistance;
+    public bool pathCrossed = false;
 
     private string catState = "walk";
     private float timeSinceDirectionUpdate = 0;
@@ -21,6 +22,7 @@ public class BlackCatBehavior : MonoBehaviour
     private Vector3 directionToMove = new Vector3(0, 0, 0);
     private Animation anim;
     private GameObject BlackCatSprite;
+    private GameObject player;
 
     public Animator animator;
     // Start is called before the first frame update
@@ -28,6 +30,7 @@ public class BlackCatBehavior : MonoBehaviour
     {
         anim = GetComponentInChildren<Animation>();
         BlackCatSprite = GameObject.Find("kittySprite");
+        player = GameObject.Find("Heroine");
     }
     void ChangeDirection()
     {
@@ -77,7 +80,8 @@ public class BlackCatBehavior : MonoBehaviour
         if (timeSincePawprint > 0.3f) {
             PawprintSpawner.transform.localPosition = new Vector2(0, pawprintOffset);
             Vector3 spawnPosition = PawprintSpawner.transform.position - new Vector3(0, 0.8f, 0);
-            Instantiate(pawprint, spawnPosition, transform.rotation);
+            GameObject newPawprint = Instantiate(pawprint, spawnPosition, transform.rotation);
+            newPawprint.GetComponent<PawprintMovement>().PawprintStart(scrollSpeed, this, player);
             pawprintOffset *= -1;
             timeSincePawprint = 0;
 
@@ -90,52 +94,40 @@ public class BlackCatBehavior : MonoBehaviour
         //rotation animation control
         Vector3 rot = transform.rotation.eulerAngles;
         float rot_multiplier = 45;
-        Debug.Log(rot);
         if (rot.z < Mathf.PI/4)
         {
-            Debug.Log("anim1");
-            anim.Play("WALK_E");
             animator.SetInteger("direction", 0);
         }
         else if (rot.z < 2 * rot_multiplier - 22.5)
         {
-            Debug.Log("anim2");
             animator.SetInteger("direction", 1);
         }
         else if (rot.z < 3 * rot_multiplier - 22.5)
         {
-            Debug.Log("anim3");
             animator.SetInteger("direction", 2);
         }
         else if (rot.z < 4 * rot_multiplier - 22.5)
         {
-            Debug.Log("anim4");
             animator.SetInteger("direction", 3);
         }
         else if (rot.z < 5 * rot_multiplier - 22.5)
         {
-            Debug.Log("anim5");
             animator.SetInteger("direction", 4);
         }
         else if (rot.z < 6 * rot_multiplier - 22.5)
         {
-            Debug.Log("anim6");
             animator.SetInteger("direction", 5);
         }
         else if (rot.z < 7 * rot_multiplier - 22.5)
         {
-            Debug.Log("anim7");
-            anim.Play("WALK_S");
             animator.SetInteger("direction", 6);
         }
         else if (rot.z < 8 * rot_multiplier - 22.5)
         {
-            Debug.Log("anim8");
             animator.SetInteger("direction", 7);
         }
         else
         {
-            Debug.Log("anim1");
             animator.SetInteger("direction", 0);
         }
 

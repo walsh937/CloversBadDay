@@ -98,6 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5c5455e0142a1241bb3bc7e01439afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  playerCollider: {fileID: 0}
+  catParent: {fileID: 0}
+  luck_cost: 1
   self: {fileID: 7509911688381186736}
   scrollSpeed: 0.5
 --- !u!61 &5585258857004555885
@@ -110,7 +114,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
