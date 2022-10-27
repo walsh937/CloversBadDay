@@ -19,7 +19,7 @@ public class CharacterMovement : MonoBehaviour
     private IEnumerator jump()
     {
         float y_velocity = 10;
-        float x_velocity = 10;
+        float x_velocity = controller.velocity.x;
         while (y_velocity > -10)
         {
             controller.velocity = new Vector2(x_velocity, y_velocity);

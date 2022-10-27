@@ -13,14 +13,13 @@ public class BlackCatBehavior : MonoBehaviour
     public bool pathCrossed = false;
 
     private string catState = "walk";
-    private float timeSinceDirectionUpdate = 0;
+    private float timeSinceDirectionUpdate = 2;
     private float timeSincePawprint = 0; 
     private float timeToUpdate = 2f;
     private float pawprintOffset = 1f;
 
     private Quaternion newRotation;
     private Vector3 directionToMove = new Vector3(0, 0, 0);
-    private Animation anim;
     private GameObject BlackCatSprite;
     private GameObject player;
 
@@ -28,22 +27,20 @@ public class BlackCatBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponentInChildren<Animation>();
         BlackCatSprite = GameObject.Find("kittySprite");
         player = GameObject.Find("Heroine");
     }
-    void ChangeDirection()
+    private void ChangeDirection()
     {
         timeSinceDirectionUpdate = 0;
         timeToUpdate = Random.Range(2, 5);
-        if (transform.position.y < -correctionDistance) {
+        if (transform.position.y < -3) {
             newRotation = Quaternion.Euler(0, 0, Random.Range(45, 134));
-        } else if (transform.position.y > correctionDistance) {
+        } else if (transform.position.y > 1) {
             newRotation = Quaternion.Euler(0, 0, Random.Range(225, 314));
         } else {
             newRotation = Quaternion.Euler(0, 0, Random.Range(0, 359));
         }
-            
         catState = "turn";
     }
     void Walk()
@@ -55,11 +52,19 @@ public class BlackCatBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (transform.position.x < -11.5f)
+        {
+            Object.Destroy(transform.parent.gameObject);
+        }
         timeSinceDirectionUpdate += Time.deltaTime;
         timeSincePawprint += Time.deltaTime;
+        Walk();
+        if (timeSinceDirectionUpdate > 0.3 && transform.position.y > 1)
+        {
+            ChangeDirection();
+        }
         if (catState == "walk")
         {
-            Walk();
             if (timeSinceDirectionUpdate > timeToUpdate) //randomly change direction
             {
                 ChangeDirection();
@@ -67,7 +72,6 @@ public class BlackCatBehavior : MonoBehaviour
         }
         else if (catState == "turn")
         {
-            Walk();
             transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, 0.05f);
 
             if (timeSinceDirectionUpdate > 1)
@@ -85,9 +89,17 @@ public class BlackCatBehavior : MonoBehaviour
             pawprintOffset *= -1;
             timeSincePawprint = 0;
 
-            if (transform.position.x < -11.5f) {
-                Object.Destroy(BlackCatSprite);
-                Object.Destroy(gameObject);
+        }
+        // render ordering
+        if (BlackCatSprite != null)
+        {
+            if (player.transform.position.y - 1 > transform.position.y)
+            {
+                BlackCatSprite.GetComponent<SpriteRenderer>().sortingOrder = 3;
+            }
+            else
+            {
+                BlackCatSprite.GetComponent<SpriteRenderer>().sortingOrder = 1;
             }
         }
 
