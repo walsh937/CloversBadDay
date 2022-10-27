@@ -7,7 +7,7 @@ public class CatSpawner : MonoBehaviour
 {
     public GameObject BlackCat;
     float timer = 0;
-    float catSpawnCooldown = 5.0f;
+    public float catSpawnCooldown = 15.0f;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -17,8 +17,9 @@ public class CatSpawner : MonoBehaviour
         if (timer > catSpawnCooldown)
         {
             timer = 0;
-            catSpawnCooldown *= 0.85f;
-
+            if (catSpawnCooldown > 2) {
+                catSpawnCooldown *= 0.85f;
+            }
             Instantiate(BlackCat, transform);
         }
     }
