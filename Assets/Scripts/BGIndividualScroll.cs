@@ -18,7 +18,6 @@ public class BGIndividualScroll : MonoBehaviour
         transform.Translate(new Vector3(-scrollSpeed * Time.deltaTime,0,0), Space.World);
         if (transform.position.x < deletePoint)
         {
-            Debug.Log("Destroying...");
             Object.Destroy(this.gameObject);
         }
         
