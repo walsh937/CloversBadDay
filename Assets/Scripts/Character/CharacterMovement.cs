@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject characterShadow;
     public float CharacterMovementSpeed = 0.5f;
     public float MovementBoundary = 3.0f;
+    
 
     // Start is called before the first frame update
     private void Start()
@@ -28,7 +29,8 @@ public class CharacterMovement : MonoBehaviour
             yield return new WaitForSecondsRealtime(0.001f); //Wait 1 second
         }
         characterShadow.GetComponent<CharacterShadow>().SetShadow(true);
-        Debug.Log("Jumped");
+        
+            
     }
 
     // Update is called once per frame
@@ -36,13 +38,19 @@ public class CharacterMovement : MonoBehaviour
     {
         if (Input.GetKey("space"))
         {
-            print(GameObject.Find("Heroine").GetComponent<PlayerData>().walk_speed);
+            //print(GameObject.Find("Heroine").GetComponent<PlayerData>().walk_speed);
             characterShadow.GetComponent<CharacterShadow>().SetShadow(false);
             StartCoroutine("jump");
         }
 
-        Vector3 charForce = new Vector2(Input.GetAxis("Horizontal") * CharacterMovementSpeed, Input.GetAxis("Vertical") * CharacterMovementSpeed);
+        if(Input.GetKeyDown("space")) {
+            GameObject.Find("Heroine").GetComponent<PlayerData>().score -= 5;
+        }
 
+        Vector3 charForce = new Vector2(Input.GetAxis("Horizontal") * CharacterMovementSpeed, Input.GetAxis("Vertical") * CharacterMovementSpeed);
+        
+        
+        //GameObject.Find("Heroine").GetComponent<PlayerData>().distance += Input.GetAxis("Horizontal");
         controller.AddForce(charForce * Time.deltaTime);
         //Bound movement on screen
         if (transform.position.y <= -MovementBoundary)

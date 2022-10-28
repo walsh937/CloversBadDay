@@ -5,7 +5,10 @@ using TMPro;
 
 public class PlayerData : MonoBehaviour
 {
-    public int luck = 69420;
+    public float luck = 69420;
+    public float distance = 0;
+    public float score = 0;
+    public float world_movement_speed = 0f; 
     public GameObject text;
     public float walk_speed = 0.10f;
     public float minimum_walk_speed = 0.10f;
@@ -31,10 +34,14 @@ public class PlayerData : MonoBehaviour
             Object.Destroy(this);
             Object.Destroy(text);
         }
+
+        luck += 0.5f *Time.deltaTime;
+        distance += 0.5f *Time.deltaTime;
+        score += 0.5f *Time.deltaTime;
     }
 
     public void UpdateUI()
     {
-        text.GetComponent<TMP_Text>().text = string.Format("Luck: {0}", luck);
+        text.GetComponent<TMP_Text>().text = string.Format("Luck: {0}\nScore: {1}\nDistance: {2}\n_wmvspx: {3}", (int)luck,(int)score,(int)distance,(int)world_movement_speed);
     }
 }
