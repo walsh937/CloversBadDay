@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CrackSpawner2 : MonoBehaviour
 {
+    
     Vector2 spawnLocation;
     Vector3 spawnRotation;
 
@@ -28,7 +29,7 @@ public class CrackSpawner2 : MonoBehaviour
             int spawnCount = (int)Random.Range(1.5f, 4.5f);
             for (int i = 0; i < spawnCount; i++)
             {
-                spawnLocation = new Vector2(14, Random.Range(1, -6));
+                spawnLocation = new Vector2(GameObject.Find("Heroine").transform.position.x+14, Random.Range(1, -6));
                 spawnRotation = new Vector3(0, 0, Random.Range(0, 359));
                 GameObject crackInst = Instantiate(crack, spawnLocation, Quaternion.Euler(spawnRotation));
                 crackInst.GetComponent<CrackMovement>().CrackStart(scrollSpeed, player);
