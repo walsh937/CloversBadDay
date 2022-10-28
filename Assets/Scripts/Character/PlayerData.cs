@@ -9,10 +9,12 @@ public class PlayerData : MonoBehaviour
     public GameObject text;
     public float walk_speed = 0.10f;
     public float minimum_walk_speed = 0.10f;
+    public GameObject deathScreen;
 
     // Start is called before the first frame update
     private void Start()
     {
+        luck = 10;
     }
 
     public void UpdatePlayerWalkSpeed()
@@ -23,10 +25,16 @@ public class PlayerData : MonoBehaviour
     private void Update()
     {
         UpdateUI();
+        if (luck < 0)
+        {
+            deathScreen.GetComponent<DeathScript>().OnDeath();
+            Object.Destroy(this);
+            Object.Destroy(text);
+        }
     }
 
     public void UpdateUI()
     {
-        text.GetComponent<TMP_Text>().text = string.Format("luck: {0}", luck);
+        text.GetComponent<TMP_Text>().text = string.Format("Luck: {0}", luck);
     }
 }
