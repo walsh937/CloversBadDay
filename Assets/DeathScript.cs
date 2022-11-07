@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class DeathScript : MonoBehaviour
 {
-    public GameObject bg;
-    public GameObject text;
+    public GameObject deathCamera;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        bg.GetComponent<SpriteRenderer>().enabled = false;
-        text.GetComponent<SpriteRenderer>().enabled = false;
     }
 
     // Update is called once per frame
 
     public void OnDeath()
     {
-        bg.GetComponent<SpriteRenderer>().enabled = true;
-        text.GetComponent<SpriteRenderer>().enabled = true;
+        Camera.main.enabled = false;
+        deathCamera.GetComponent<Camera>().enabled = true;
+    }
+
+    private void Update()
+    {
     }
 }
