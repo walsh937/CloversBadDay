@@ -9,6 +9,9 @@ public class BackgroundScroller : MonoBehaviour
     private GameObject firstBackground;
     private float bgwidth;
 
+    public GameObject player;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +28,7 @@ public class BackgroundScroller : MonoBehaviour
         if (firstBackground == null || firstBackground.transform.position.x < 0)
         {
             firstBackground = Instantiate(background, new Vector2(bgwidth-0.2f, 0), transform.rotation);
-            firstBackground.transform.Translate(new Vector3(-scrollSpeed * Time.deltaTime, 0, 0), Space.World);
+            //firstBackground.transform.Translate(new Vector3(-scrollSpeed * Time.deltaTime, 0, 0), Space.World);
             firstBackground.GetComponent<BGIndividualScroll>().scrollSpeed = scrollSpeed;
         }
     }
