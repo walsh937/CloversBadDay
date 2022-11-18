@@ -9,6 +9,7 @@ public class BlackCatBehavior : MonoBehaviour
 
     public GameObject pawprint;
     public GameObject PawprintSpawner;
+    public GameObject mainCamera;
     public float correctionDistance;
     public bool pathCrossed = false;
 
@@ -29,6 +30,7 @@ public class BlackCatBehavior : MonoBehaviour
     {
         BlackCatSprite = GameObject.Find("kittySprite");
         player = GameObject.Find("Heroine");
+        mainCamera = GameObject.Find("Main Camera");
     }
     private void ChangeDirection()
     {
@@ -52,7 +54,7 @@ public class BlackCatBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x < -11.5f)
+        if (transform.position.x < -11.5f + mainCamera.transform.position.x)
         {
             Object.Destroy(transform.parent.gameObject);
         }
@@ -85,7 +87,7 @@ public class BlackCatBehavior : MonoBehaviour
             PawprintSpawner.transform.localPosition = new Vector2(0, pawprintOffset);
             Vector3 spawnPosition = PawprintSpawner.transform.position - new Vector3(0, 0.8f, 0);
             GameObject newPawprint = Instantiate(pawprint, spawnPosition, transform.rotation);
-            newPawprint.GetComponent<PawprintMovement>().PawprintStart(scrollSpeed, this, player);
+            newPawprint.GetComponent<PawprintMovement>().PawprintStart(scrollSpeed, this, player, mainCamera);
             pawprintOffset *= -1;
             timeSincePawprint = 0;
 

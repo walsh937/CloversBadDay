@@ -5,18 +5,18 @@ using UnityEngine;
 public class BGIndividualScroll : MonoBehaviour
 {
     public float scrollSpeed;
-    public float deletePoint;
+    public GameObject deletePoint;
     // Start is called before the first frame update
     void Start()
     {
-        deletePoint = -GetComponent<SpriteRenderer>().bounds.size.x;
+        deletePoint = GameObject.Find("BGDeletePoint");
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(new Vector3(-scrollSpeed * Time.deltaTime,0,0), Space.World);
-        if (transform.position.x < deletePoint)
+        if (transform.position.x < deletePoint.transform.position.x)
         {
             Object.Destroy(this.gameObject);
         }

@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   catSpeed: 2
-  scrollSpeed: 4
+  scrollSpeed: 0
   pawprint: {fileID: 7509911688381186736, guid: 8cea5294130a1ca46b449d1a5f9bc644, type: 3}
   PawprintSpawner: {fileID: 1686465416958993598}
   correctionDistance: 3

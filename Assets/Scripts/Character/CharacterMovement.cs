@@ -6,6 +6,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D controller;
+    private SpriteRenderer sr;
     public GameObject characterShadow;
     public float CharacterMovementSpeed = 0.5f;
     public float MovementBoundary = 3.0f;
@@ -15,6 +16,7 @@ public class CharacterMovement : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private IEnumerator jump()
@@ -36,6 +38,7 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        
         if (Input.GetKey("space"))
         {
             //print(GameObject.Find("Heroine").GetComponent<PlayerData>().walk_speed);
@@ -48,7 +51,13 @@ public class CharacterMovement : MonoBehaviour
         }
 
         Vector3 charForce = new Vector2(Input.GetAxis("Horizontal") * CharacterMovementSpeed, Input.GetAxis("Vertical") * CharacterMovementSpeed);
-        
+        if (charForce.x < 0)
+        {
+            sr.flipX = true;
+        } else
+        {
+            sr.flipX = false;
+        }
         
         //GameObject.Find("Heroine").GetComponent<PlayerData>().distance += Input.GetAxis("Horizontal");
         controller.AddForce(charForce * Time.deltaTime);
