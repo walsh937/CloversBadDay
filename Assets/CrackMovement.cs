@@ -6,6 +6,7 @@ public class CrackMovement : MonoBehaviour
 {
     public float scrollSpeed = 2;
     private GameObject player;
+    private GameObject mainCamera;
     private Collider2D playerCollider;
     private bool crossed = false;
     private int luck_cost = 1;
@@ -20,13 +21,15 @@ public class CrackMovement : MonoBehaviour
         this.scrollSpeed = scrollSpeed;
         this.player = player;
         playerCollider = player.GetComponent<CharacterMovement>().characterShadow.GetComponent<Collider2D>();
+        mainCamera = GameObject.Find("Main Camera");
     }
 
     // Update is called once per frame
     private void Update()
     {
+
         transform.Translate(-scrollSpeed * Time.deltaTime, 0, 0, Space.World);
-        if (transform.position.x < -11.5f)
+        if (transform.position.x < -11.5f + mainCamera.GetComponent<CameraController>().getCameraCreep())
         {
             Object.Destroy(this.gameObject);
         }
