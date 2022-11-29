@@ -34,12 +34,10 @@ public class CameraController : MonoBehaviour
         float backgroundUpdater = Mathf.Floor(transform.position.x / bgwidth) - lastPos;
         if (backgroundUpdater >= 1)
         {
-            Debug.Log(transform.position.x / bgwidth + " " + lastPos);
             lastPos = Mathf.Floor(transform.position.x / bgwidth);
             Instantiate(background, new Vector2((lastPos + 1)*bgwidth,0), transform.rotation);
         } else if (backgroundUpdater <= -1)
         {
-            Debug.Log(transform.position.x / bgwidth + " " + lastPos);
             lastPos = Mathf.Floor(transform.position.x / bgwidth);
             Instantiate(background, new Vector2((lastPos - 1) * bgwidth, 0), transform.rotation);
         }

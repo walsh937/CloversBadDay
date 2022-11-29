@@ -9,16 +9,10 @@ public class CrackSpawner2 : MonoBehaviour
     Vector3 spawnRotation;
 
     float timer = 4;
+    public GameObject[] prefabs;
     public float crackCooldown = 1;
-    public GameObject crack;
     public float scrollSpeed = 4;
     public GameObject player;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -29,9 +23,10 @@ public class CrackSpawner2 : MonoBehaviour
             int spawnCount = (int)Random.Range(1.5f, 4.5f);
             for (int i = 0; i < spawnCount; i++)
             {
-                spawnLocation = new Vector2(GameObject.Find("Heroine").transform.position.x+14, Random.Range(1, -6));
-                spawnRotation = new Vector3(0, 0, Random.Range(0, 359));
-                GameObject crackInst = Instantiate(crack, spawnLocation, Quaternion.Euler(spawnRotation));
+                GameObject crackPrefab = prefabs[(int)Random.Range(0.0f, 5.999f)];
+                spawnLocation = new Vector2(GameObject.Find("Heroine").transform.position.x+Random.Range(20f, 24f), Random.Range(1, -6));
+                spawnRotation = new Vector3(0, 0, 0);
+                GameObject crackInst = Instantiate(crackPrefab, spawnLocation, Quaternion.identity);
                 crackInst.GetComponent<CrackMovement>().CrackStart(scrollSpeed, player);
             }
         }

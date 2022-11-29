@@ -7,9 +7,12 @@ public class CharacterMovement : MonoBehaviour
 {
     private Rigidbody2D controller;
     private SpriteRenderer sr;
+    public GameObject particleEmitter;
+    public GameObject particleEmitter2;
     public GameObject characterShadow;
     public float CharacterMovementSpeed = 0.5f;
     public float MovementBoundary = 3.0f;
+    
     
 
     // Start is called before the first frame update
@@ -21,15 +24,24 @@ public class CharacterMovement : MonoBehaviour
 
     private IEnumerator jump()
     {
-        float y_velocity = 10;
+        float old_y_velocity = controller.velocity.y;
+        float y_velocity = old_y_velocity+10;
         float x_velocity = controller.velocity.x;
-        while (y_velocity > -10)
+        particleEmitter.GetComponent<ParticleSystem>().Stop();
+        while (y_velocity > old_y_velocity-10)
         {
             controller.velocity = new Vector2(x_velocity, y_velocity);
             y_velocity -= 0.5f * Time.deltaTime * 60;
             print(controller.velocity);
+            if (y_velocity <= old_y_velocity - 10)
+            {
+                controller.velocity = new Vector2(x_velocity, old_y_velocity-10);
+                break;
+            }
             yield return new WaitForSecondsRealtime(0.001f); //Wait 1 second
         }
+        particleEmitter.GetComponent<ParticleSystem>().Play();
+        particleEmitter2.GetComponent<ParticleSystem>().Play();
         characterShadow.GetComponent<CharacterShadow>().SetShadow(true);
         
             
