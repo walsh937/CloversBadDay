@@ -6,10 +6,14 @@ public class BGIndividualScroll : MonoBehaviour
 {
     public float scrollSpeed;
     public GameObject deletePoint;
+    public Sprite[] bgSprites;
+    private float bgwidth;
     // Start is called before the first frame update
     void Start()
     {
+        bgwidth = GetComponent<SpriteRenderer>().bounds.size.x;
         deletePoint = GameObject.Find("BGDeletePoint");
+        GetComponent<SpriteRenderer>().sprite = bgSprites[(int)transform.position.x/(int)bgwidth % 2];
     }
 
     // Update is called once per frame

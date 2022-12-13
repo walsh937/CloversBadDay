@@ -99,3 +99,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 0
   deletePoint: {fileID: 0}
+  bgSprites:
+  - {fileID: 21300000, guid: 57521c7fa0c7f54449307bfe2c7cd50d, type: 3}
+  - {fileID: 21300000, guid: 2863bf6573492b34a981bbce243afb30, type: 3}

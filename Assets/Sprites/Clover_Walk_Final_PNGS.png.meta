@@ -1,0 +1,475 @@
+fileFormatVersion: 2
+guid: a9023b981b850ba47b2fbc0710d1dd01
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3081
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf158437bafe5e4dab234ccabf2332a
+      internalID: 205713767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_1
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 3081
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b80937b82c177440bd25706ec8822df
+      internalID: 139281944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_2
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 3081
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de9d59b5255f71459f598324052003f
+      internalID: 1057558637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_3
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 3081
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7118cffa428384288a21193bac35a7
+      internalID: 942086519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2054
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c642ba74bdcbe4d48a8819e569a32cb3
+      internalID: -410899679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_5
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 2054
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4654fd8e817760441ae68e5e705d29d6
+      internalID: -21113698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_6
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 2054
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02c771cb2e00ef74da868c2039727db1
+      internalID: 1102073240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_7
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2054
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f593b3aa6f439143ae4ab21a3a22b8f
+      internalID: 1535873100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1027
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1a5c3382feba840a7e9ee8f1343898
+      internalID: 2138587615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_9
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 1027
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c96ec34bb8725af4aa36d65cb5a87e42
+      internalID: -1041886202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_10
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 1027
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9bd3f1689440054397980c6ecdf859d
+      internalID: 973482786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_11
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 1027
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc01bfb45c28c8489bc90ecf1d5d4ea
+      internalID: -103049727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25b36f97ce5a1c48ae2b3b7711a230d
+      internalID: 52293239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_13
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 0
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b8a0801658ca54eafa6c84730ad54a
+      internalID: -444880434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_14
+      rect:
+        serializedVersion: 2
+        x: 1054
+        y: 0
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3ca3c2db2ded74e901af433b58fe80
+      internalID: -737566024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Clover_Walk_Final_PNGS_15
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 0
+        width: 527
+        height: 1027
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd58b448c72ded84991c3d7f15e2c6e1
+      internalID: 1950611031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Clover_Walk_Final_PNGS_2: 1057558637
+      Clover_Walk_Final_PNGS_7: 1535873100
+      Clover_Walk_Final_PNGS_5: -21113698
+      Clover_Walk_Final_PNGS_6: 1102073240
+      Clover_Walk_Final_PNGS_15: 1950611031
+      Clover_Walk_Final_PNGS_8: 2138587615
+      Clover_Walk_Final_PNGS_10: 973482786
+      Clover_Walk_Final_PNGS_3: 942086519
+      Clover_Walk_Final_PNGS_9: -1041886202
+      Clover_Walk_Final_PNGS_4: -410899679
+      Clover_Walk_Final_PNGS_11: -103049727
+      Clover_Walk_Final_PNGS_12: 52293239
+      Clover_Walk_Final_PNGS_14: -737566024
+      Clover_Walk_Final_PNGS_1: 139281944
+      Clover_Walk_Final_PNGS_13: -444880434
+      Clover_Walk_Final_PNGS_0: 205713767
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

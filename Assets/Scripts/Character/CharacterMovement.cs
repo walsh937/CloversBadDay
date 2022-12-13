@@ -12,7 +12,7 @@ public class CharacterMovement : MonoBehaviour
     public GameObject characterShadow;
     public float CharacterMovementSpeed = 0.5f;
     public float MovementBoundary = 3.0f;
-    
+    private Animator animator;
     
 
     // Start is called before the first frame update
@@ -20,6 +20,7 @@ public class CharacterMovement : MonoBehaviour
     {
         controller = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private IEnumerator jump()
@@ -35,7 +36,8 @@ public class CharacterMovement : MonoBehaviour
             print(controller.velocity);
             if (y_velocity <= old_y_velocity - 10)
             {
-                controller.velocity = new Vector2(x_velocity, old_y_velocity-10);
+                controller.velocity = new Vector2(x_velocity, old_y_velocity-5);
+                animator.SetBool("jumping", false);
                 break;
             }
             yield return new WaitForSecondsRealtime(0.001f); //Wait 1 second
@@ -50,11 +52,12 @@ public class CharacterMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        
+        animator.SetFloat("velocity", controller.velocity.magnitude);
         if (Input.GetKey("space"))
         {
             //print(GameObject.Find("Heroine").GetComponent<PlayerData>().walk_speed);
             characterShadow.GetComponent<CharacterShadow>().SetShadow(false);
+            animator.SetBool("jumping", true);
             StartCoroutine("jump");
         }
 

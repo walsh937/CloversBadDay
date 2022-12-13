@@ -35,13 +35,11 @@ public class PlayerData : MonoBehaviour
             Object.Destroy(text);
         }
 
-        luck += 0.5f *Time.deltaTime;
-        distance += 0.5f *Time.deltaTime;
         score += 0.5f *Time.deltaTime;
     }
 
     public void UpdateUI()
     {
-        text.GetComponent<TMP_Text>().text = string.Format("Luck: {0}\nScore: {1}\nDistance: {2}\n_wmvspx: {3}", (int)luck,(int)score,(int)distance,(int)world_movement_speed);
+        text.GetComponent<TMP_Text>().text = string.Format("Luck: {0}\nScore: {1}", (int)luck,(int)score,(int)distance,(int)world_movement_speed);
     }
 }
